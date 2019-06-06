@@ -1,0 +1,35 @@
+{
+  "name": "employe-next-app",
+  "version": "1.0.0",
+  "description": "employe-next-app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/AndrianinaHH/employe-next-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/AndrianinaHH/employe-next-app/issues"
+  },
+  "homepage": "https://gitlab.com/AndrianinaHH/employe-next-app#readme",
+  "dependencies": {
+    "@zeit/next-typescript": "^1.1.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/next": "^8.0.5",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "babel-plugin-styled-components": "^1.10.0"
+  }
+}
