@@ -1,45 +1,23 @@
-import Link from 'next/link';
+import { Link } from '../routes';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/common/Layout';
 
-const Index = props => (
-  <Layout>
-    <h1>Batman TV Shows</h1>
-    <ul>
-      {props.shows.map(show => (
-        <li key={show.id}>
-          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-            <a>{show.name}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-    <style jsx global>{`
-      h1,
-      a {
-        font-family: 'Arial';
-      }
-
-      ul {
-        padding: 0;
-      }
-
-      li {
-        list-style: none;
-        margin: 5px 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: blue;
-      }
-
-      a:hover {
-        opacity: 0.6;
-      }
-    `}</style>
-  </Layout>
-);
+const Index = props => {
+  return (
+    <Layout>
+      <h1>Batman TV Shows</h1>
+      <ul>
+        {props.shows.map(show => (
+          <li key={show.id}>
+            <Link route={`/post/${show.id}`}>
+              <a>{show.name}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  );
+};
 
 Index.getInitialProps = async function() {
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');

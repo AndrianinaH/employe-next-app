@@ -1,0 +1,37 @@
+body {
+  margin: 0px;
+  background: #e0f7fa;
+  scroll-behavior: smooth;
+}
+.margin {
+  margin: 20px;
+}
+.papers {
+  margin-left: 20px;
+  margin-right: 15px;
+  padding: 10px;
+}
+.chips {
+  margin: 15px;
+}
+a,
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.searchIcon {
+  position: relative;
+  top: 5px;
+  padding-right: 5px;
+}
+
+.searchInput {
+  width: 90%;
+}
+.sticky {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10;
+}
