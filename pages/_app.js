@@ -1,8 +1,6 @@
 import App, { Container } from 'next/app';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from 'react-apollo-hooks';
 import withApollo from '../config/withApollo';
-import { log } from 'util';
-import { GET_ALL_EMPLOYE } from '../graphql/employe/query';
 
 class MyApp extends App {
   render() {

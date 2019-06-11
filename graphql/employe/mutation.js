@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const ADD_EMPLOYE = gql`
+const ADD_EMPLOYE = gql`
   mutation addEmploye(
     $nom: String!
     $prenom: String!
@@ -28,7 +28,7 @@ export const ADD_EMPLOYE = gql`
   }
 `;
 
-export const UPDATE_EMPLOYE = gql`
+const UPDATE_EMPLOYE = gql`
   mutation updateEmploye(
     $id: String!
     $nom: String!
@@ -58,10 +58,12 @@ export const UPDATE_EMPLOYE = gql`
   }
 `;
 
-export const DELETE_EMPLOYE = gql`
+const DELETE_EMPLOYE = gql`
   mutation deleteEmploye($id: String!) {
     deleteEmploye(id: $id) {
       id
     }
   }
 `;
+
+export { ADD_EMPLOYE, UPDATE_EMPLOYE, DELETE_EMPLOYE };

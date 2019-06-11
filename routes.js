@@ -6,4 +6,4 @@ const routes = require('next-routes');
 // blog   blog      /blog/:slug
 // user   profile   /user/:id
 
-module.exports = routes().add('post', '/post/:id');
+module.exports = routes().add('employe-edit', '/employe-edit/:id');

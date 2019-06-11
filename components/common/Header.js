@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
+import { Link } from '../../routes';
 
 const styles = {
   root: {
@@ -34,7 +35,9 @@ const Header = props => {
             color='inherit'
             className={classes.grow}
           >
-            Employe App
+            <Link route='/'>
+              <a>Employe App</a>
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>

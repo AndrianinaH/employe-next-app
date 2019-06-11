@@ -1,33 +1,30 @@
-import { Link } from '../routes';
-import fetch from 'isomorphic-unfetch';
 import Layout from '../components/common/Layout';
+import { Grid, Typography, Paper } from '@material-ui/core';
+import EmployeList from '../components/EmployePage/EmployeList/EmployeList';
 
-const Index = props => {
+const EmployePage = props => {
   return (
     <Layout>
-      <h1>Batman TV Shows</h1>
-      <ul>
-        {props.shows.map(show => (
-          <li key={show.id}>
-            <Link route={`/post/${show.id}`}>
-              <a>{show.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper className='papers'>
+            <Typography
+              variant='h6'
+              color='primary'
+              align='center'
+              component='h2'
+            >
+              Liste des employés
+            </Typography>
+          </Paper>
+        </Grid>
+      </Grid>
+      <br />
+      <Grid item xs={12}>
+        <EmployeList {...props} />
+      </Grid>
     </Layout>
   );
 };
 
-Index.getInitialProps = async function() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-  const data = await res.json();
-
-  console.log(`Show data fetched. Count: ${data.length}`);
-
-  return {
-    shows: data.map(entry => entry.show)
-  };
-};
-
-export default Index;
+export default EmployePage;
