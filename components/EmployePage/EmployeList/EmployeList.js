@@ -5,14 +5,22 @@ import {
   Paper,
   Button,
   TableHead,
-  TableBody
+  TableBody,
+  withStyles
 } from '@material-ui/core';
 import { Link } from '../../../routes';
 import { useQuery } from 'react-apollo-hooks';
 import * as query from '../../../graphql/employe/query';
 import EmployeItem from './EmployeItem/EmployeItem';
 
+const styles = {
+  table: {
+    minWidth: 650
+  }
+};
+
 const EmployeList = props => {
+  const { classes } = props;
   const { data, loading, error } = useQuery(query.GET_ALL_EMPLOYE);
   if (loading) {
     return <div>Loading...</div>;
@@ -29,13 +37,13 @@ const EmployeList = props => {
   });
 
   return (
-    <Paper className='papers'>
+    <Paper className='papers-table'>
       <Button variant='contained' color='primary'>
         <Link route='/employe-add'>
           <a>Ajouter un employé</a>
         </Link>
       </Button>
-      <Table>
+      <Table className={classes.table}>
         <TableHead>
           <TableRow>
             <TableCell>Photo</TableCell>
@@ -53,4 +61,4 @@ const EmployeList = props => {
   );
 };
 
-export default EmployeList;
+export default withStyles(styles)(EmployeList);

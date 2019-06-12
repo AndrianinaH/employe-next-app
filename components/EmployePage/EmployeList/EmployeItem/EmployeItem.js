@@ -25,7 +25,6 @@ const EmployeItem = props => {
 
   const deleteEmploye = useMutation(mutation.DELETE_EMPLOYE);
   const removeEmploye = id => {
-    console.log(id);
     deleteEmploye({
       update: (cache, mutationResult) => {
         const { allEmployes } = cache.readQuery({
